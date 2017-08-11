@@ -1,3 +1,5 @@
+# Requires: live-build
+
 all:
 	sudo lb build
 
