@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -eu
+
+_DEFAULT="$(awk '{ print $2; exit }' isolinux/live.cfg)"
+
+sed -i \
+	-e "s@default .*@default ${_DEFAULT}@g" \
+	isolinux/isolinux.cfg
+
+#-e "s@timeout .*@timeout 1@g"

@@ -1,1 +1,8 @@
 /.build/
+/.lock
+/binary/
+/chroot/
+/cache/
+
+/chroot.*
+/live-image-*
