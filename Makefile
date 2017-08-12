@@ -1,7 +1,7 @@
 # Requires: live-build
 
 all:
-	sudo lb build
+	lb build
 
 clean:
-	sudo lb clean --all
+	lb clean --all
