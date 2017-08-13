@@ -2,6 +2,8 @@
 
 set -eu
 
+TARGET="video.avi"
+
 URL="magnet:?xt=urn:btih:608c9e4070398f02757492cf3817783ee93fa32d&dn=Hackers+%281995%29+720p+BrRip+x264+-+YIFY&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Fzer0day.ch%3A1337&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
 
 TEMPDIR="$(mktemp -d)"
@@ -10,7 +12,7 @@ apt install --yes aria2
 
 (cd "${TEMPDIR}" && aria2c --seed-time=0 "${URL}")
 
-mv -v "$(find "${TEMPDIR}" -type f -printf '%s %p\n' | sort -rn | head -n1 | cut -d' ' -f2-)" video.avi
+mv -v "$(find "${TEMPDIR}" -type f -printf '%s %p\n' | sort -rn | head -n1 | cut -d' ' -f2-)" "${TARGET}"
 
 rm -rf "${TEMPDIR}"
 
