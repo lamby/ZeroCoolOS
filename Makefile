@@ -5,3 +5,6 @@ all:
 
 clean:
 	lb clean --all
+
+distclean: clean
+	rm -rf cache/
