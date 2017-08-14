@@ -1,6 +1,7 @@
 # Requires: live-build
 
 all:
+	lb config
 	lb build
 
 clean:
