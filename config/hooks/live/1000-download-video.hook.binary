@@ -19,11 +19,10 @@ apt install --yes aria2
 
 (cd "${TEMPDIR}" && aria2c --seed-time=0 "${URL}")
 
-mv -v "$(find "${TEMPDIR}" -type f -printf '%s %p\n' | sort -rn | head -n1 | cut -d' ' -f2-)" "${TARGET}"
+mv -v "$(find "${TEMPDIR}" -type f -printf '%s %p\n' | sort -rn | head -n1 | cut -d' ' -f2-)" "${CACHE}"
 
 rm -rf "${TEMPDIR}"
 
-apt remove --yes --purge aria2
+cp "${CACHE}" "${TARGET}"
 
-# Cache file
-cp "${VIDEO}" "${TARGET}"
+apt remove --yes --purge aria2
