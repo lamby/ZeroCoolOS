@@ -1,3 +1,10 @@
+/config/binary
+/config/bootstrap
+/config/build
+/config/chroot
+/config/common
+/config/source
+
 /.build/
 /.lock
 /binary/

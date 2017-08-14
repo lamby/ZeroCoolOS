@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+MIRROR_BUILD="http://deb.debian.org/debian/"
+MIRROR_BINARY="http://deb.debian.org/debian/"
+
+lb config noauto \
+	--mirror-binary="${MIRROR_BINARY}" \
+	--mirror-chroot="${MIRROR_BUILD}" \
+	--mirror-bootstrap="${MIRROR_BUILD}" \
+	--mirror-debian-installer="${MIRROR_BINARY}" \
+	\
+	--parent-mirror-binary="${MIRROR_BINARY}" \
+	--parent-mirror-chroot="${MIRROR_BUILD}" \
+	--parent-mirror-bootstrap="${MIRROR_BUILD}" \
+	--parent-mirror-debian-installer="${MIRROR_BINARY}" \
+	"${@}"
