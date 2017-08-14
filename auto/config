@@ -15,4 +15,9 @@ lb config noauto \
 	--parent-mirror-chroot="${MIRROR_BUILD}" \
 	--parent-mirror-bootstrap="${MIRROR_BUILD}" \
 	--parent-mirror-debian-installer="${MIRROR_BINARY}" \
+	\
+	--hdd-label="ZEROCOOLOS" \
+	--iso-volume="ZeroCoolOS" \
+	--iso-publisher="ZeroCoolOS; https://github.com/lamby/ZeroCoolOS" \
+	\
 	"${@}"
